@@ -191,13 +191,15 @@ img {
 }
 
 .search-container {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    display: flex;
-    align-items: center;
+    position: static; /* Mantém a posição original sem fixar */
+    display: flex; /* Usa flexbox para alinhar os elementos */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Alinha os itens verticalmente */
+    width: 100%; /* Ocupa toda a largura do contêiner */
+    max-width: 600px; /* Define uma largura máxima */
+    margin: 20px auto; /* Centraliza a barra horizontalmente */
     background-color: #fff;
-    padding: 5px 10px;
+    padding: 10px 20px;
     border-radius: 20px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
@@ -223,5 +225,93 @@ img {
     width: 20px;
     height: 20px;
 }
+
+/* Layout responsivo com Flexbox */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+/* Ajustes para telas menores */
+@media (max-width: 1024px) {
+    .container {
+        width: 80%;
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    select, button {
+        font-size: 16px;
+        padding: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .lateral {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .search-container {
+        width: 95%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .search-container {
+        width: 100%;
+        max-width: none;
+        left: 0;
+        transform: none;
+    }
+
+    #search-bar {
+        width: 100%;
+    }
+
+    .contador-container {
+        padding: 10px;
+    }
+
+    .contador-number {
+        font-size: 36px;
+    }
+}
+
+#search-bar {
+    width: 80%;
+}
+
+/* Imagens responsivas */
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Fontes responsivas */
+body {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
 
 
